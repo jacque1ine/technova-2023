@@ -1,29 +1,42 @@
-import React from 'react';
-import {
-  ChakraProvider,
-  Box,
-  Text,
-  Link,
-  VStack,
-  Code,
-  Grid,
-  theme,
-} from '@chakra-ui/react';
-import { ColorModeSwitcher } from './ColorModeSwitcher';
-import { Logo } from './Logo';
-import { Button, ButtonGroup } from '@chakra-ui/react';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
+import { Box, Heading, Text } from '@chakra-ui/react';
+import { Box, Flex, Text, Link } from '@chakra-ui/react';
+import { css } from '@emotion/core';
 import MyCard from './components/MyCard';
+import Tester from './components/Tester';
 
 function App() {
   return (
-    <ChakraProvider theme={theme}>
-      <Box textAlign="center" fontSize="xl">
-        <Text>HELLO HELLO</Text>
-        <Button colorScheme="blue">Button</Button>
-        <MyCard />
+    <BrowserRouter>
+      <Box
+        css={css`
+          min-height: 100vh;
+        `}
+      >
+        <Flex
+          as="header"
+          align="center"
+          justify="space-between"
+          p={5}
+          bg="teal.500"
+          color="white"
+        >
+          <Text fontSize="xl">My Website</Text>
+          <Box>
+            <Link to="/" color="white">
+              Home
+            </Link>
+            <Link to="/about" color="white" ml={2}>
+              About
+            </Link>
+            <Link to="/contact" color="white" ml={2}>
+              Contact
+            </Link>
+          </Box>
+        </Flex>
+        <Route exact path="/" component={Tester} />
+        <Route path="/about" component={MyCard} />
       </Box>
-    </ChakraProvider>
+    </BrowserRouter>
   );
 }
-
-export default App;
