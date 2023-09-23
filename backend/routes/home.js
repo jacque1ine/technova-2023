@@ -1,5 +1,5 @@
 const home = async(req, res, next) => {
-  res.send('hello');
+  console.log(req.params.userId);
 };
 
 module.exports = home;
