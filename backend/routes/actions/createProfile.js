@@ -1,9 +1,10 @@
 const { ObjectId, Binary } = require('mongodb');
-const { usersCol } = require('../db');
+const { usersCol } = require('../../db');
 
 const createProfile = async(req, res, next) => {
   const userId = req.params.userId;
-  usersCol.updateOne(
+  
+  await usersCol.updateOne(
     {'_id': new ObjectId(userId)},
     {
       $set: {
@@ -25,11 +26,7 @@ const createProfile = async(req, res, next) => {
     }
   );
 
-  const payload = {
-    'userId': userId
-  }
-
-  res.send(payload);
+  res.send(userId);
 };
 
 module.exports = createProfile;
