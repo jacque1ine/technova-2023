@@ -10,6 +10,7 @@ const challengesList = require('./routes/pages/challengeList');
 const challenge = require('./routes/pages/challenge');
 const profile = require('./routes/pages/profile');
 const leaderboard = require('./routes/pages/leaderboard');
+const match = require('./routes/pages/match');
 
 // Configure Express
 var app = express();
@@ -25,6 +26,7 @@ app.get('/challenges/:type/:userId', challengesList);
 app.get('/challenges/:challengeId/:userId', challenge);
 app.get('/profile/:userId', profile);
 app.get('/leaderboard/:userId', leaderboard);
+app.get('/match/:userId', match);
 
 // Listen for server connection
 app.listen(3001, () => {
