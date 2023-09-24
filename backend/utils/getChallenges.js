@@ -1,15 +1,17 @@
+const { ObjectId } = require('mongodb');
 const { challengesCol } = require('../db');
 
-const getChallenges = async(type, userId) => {
-  let filter;
-  if (type == 'featured') {
+const getChallenges = async(filter, userId) => {
+  if (filter == 'featured') {
     filter = {'featured': true};
-  } else if (type == 'my-challenges') {
+  } else if (filter == 'my-challenges') {
     filter = {'users.joined': userId, 'featured': false};
-  } else if (type == 'tech') {
+  } else if (filter == 'tech') {
     filter = {'type': 'tech', 'featured': false};
-  } else if (type == 'hobby') {
+  } else if (filter == 'hobby') {
     filter = {'type': 'hobby', 'featured': false};
+  } else {
+    filter = {'_id': new ObjectId(filter)}
   }
 
   const challengesCursor = await challengesCol.find(filter);

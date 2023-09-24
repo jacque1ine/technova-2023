@@ -1,4 +1,4 @@
-const getChallenges = require('../utils/getChallenges');
+const getChallenges = require('../../utils/getChallenges');
 
 const challengesList = async(req, res, next) => {
   await getChallenges(req.params.type, req.params.userId)
