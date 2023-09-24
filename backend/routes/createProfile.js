@@ -8,7 +8,7 @@ const createProfile = async(req, res, next) => {
     {
       $set: {
         'name': req.body.name,
-        'points': 0,
+        'coins': 0,
         'level': 1,
         'pronouns': req.body.pronouns,
         'location': req.body.location,
