@@ -6,11 +6,10 @@ const home = async(req, res, next) => {
   const userId = req.params.userId;
   const user = await usersCol.findOne({'_id': new ObjectId(userId)});
 
-  const featuredChallenge = await getChallenges({'featured': true});
-  const myChallenges = await getChallenges({'users.joined': userId, 'featured': false});
-  const techChallenges = await getChallenges({'type': 'tech', 'featured': false});
-  const hobbyChallenges = await getChallenges({'type': 'hobby', 'featured': false});
-  console.log(techChallenges);
+  const featuredChallenge = await getChallenges('featured', userId);
+  const myChallenges = await getChallenges('my-challenges', userId);
+  const techChallenges = await getChallenges('tech', userId);
+  const hobbyChallenges = await getChallenges('hobby', userId);
 
   const payload = {
     'picture': user.picture,
