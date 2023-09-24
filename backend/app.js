@@ -4,6 +4,7 @@ require('dotenv').config();
 
 // Import routes
 const home = require('./routes/home');
+const createProfile = require('./routes/createProfile');
 
 // Configure Express
 var app = express();
@@ -13,6 +14,7 @@ app.use(cors());
 
 // Use routes
 app.get('/:userId', home);
+app.post('/create-profile/:userId', createProfile);
 
 // Listen for server connection
 app.listen(3001, () => {
