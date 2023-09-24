@@ -7,23 +7,30 @@ import {
   VStack,
   Code,
   Grid,
-  theme,
+  extendTheme
 } from '@chakra-ui/react';
 import { ColorModeSwitcher } from './ColorModeSwitcher';
 import { Logo } from './Logo';
 import { Button, ButtonGroup } from '@chakra-ui/react';
 import MyCard from './components/MyCard';
+import ViewChallenge from './components/ViewChallenge';
+import '@fontsource/inter/700.css'
 
 function App() {
   return (
     <ChakraProvider theme={theme}>
       <Box textAlign="center" fontSize="xl">
-        <Text>HELLO HELLO</Text>
-        <Button colorScheme="blue">Button</Button>
-        <MyCard />
       </Box>
     </ChakraProvider>
   );
 }
 
 export default App;
+
+const theme = extendTheme({
+  fonts: {
+    heading: `'Inter', sans-serif`,
+  },
+})
+
+
