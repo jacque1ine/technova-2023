@@ -3,8 +3,10 @@ var cors = require('cors');
 require('dotenv').config();
 
 // Import routes
-const home = require('./routes/home');
 const createProfile = require('./routes/createProfile');
+
+const home = require('./routes/home');
+const challengesList = require('./routes/challengeList');
 
 // Configure Express
 var app = express();
@@ -13,8 +15,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 
 // Use routes
-app.get('/:userId', home);
 app.post('/create-profile/:userId', createProfile);
+
+app.get('/:userId', home);
+app.get('/challenges/:type/:userId', challengesList);
 
 // Listen for server connection
 app.listen(3001, () => {
