@@ -13,7 +13,8 @@ import { ColorModeSwitcher } from './ColorModeSwitcher';
 import { Logo } from './Logo';
 import { Button, ButtonGroup } from '@chakra-ui/react';
 import MyCard from './components/MyCard';
-//import ViewChallenge from './components/ViewChallenges';
+//import CreateProfile from './components/CreateProfile';
+
 import '@fontsource/inter/700.css'
 //import ViewChallenges from './components/ViewChallenges';
 
