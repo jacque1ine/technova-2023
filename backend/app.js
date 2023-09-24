@@ -7,6 +7,7 @@ const createProfile = require('./routes/actions/createProfile');
 const createChallenge = require('./routes/actions/createChallenge');
 const joinChallenge = require('./routes/actions/joinChallenge');
 const leaveChallenge = require('./routes/actions/leaveChallenge');
+const submitChallenge = require('./routes/actions/submitChallenge');
 
 // Import page route logic
 const home = require('./routes/pages/home');
@@ -27,6 +28,7 @@ app.post('/create-profile/:userId', createProfile);
 app.post('/create-challenge/:userId', createChallenge);
 app.put('/join-challenge/:challengeId/:userId', joinChallenge);
 app.put('/leave-challenge/:challengeId/:userId', leaveChallenge);
+app.put('/submit-challenge/:challengeId/:userId', submitChallenge);
 
 // Page routes
 app.get('/:userId', home);
