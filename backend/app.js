@@ -3,7 +3,8 @@ var cors = require('cors');
 require('dotenv').config();
 
 // Import routes
-const createProfile = require('./routes/createProfile');
+const createProfile = require('./routes/actions/createProfile');
+const createChallenge = require('./routes/actions/createChallenge');
 
 const home = require('./routes/pages/home');
 const challengesList = require('./routes/pages/challengeList');
@@ -20,8 +21,9 @@ app.use(cors());
 
 // Use routes
 app.post('/create-profile/:userId', createProfile);
+app.post('/create-challenge/:userId', createChallenge);
 
-app.get('/:userId', home);
+// app.get('/:userId', home);
 app.get('/challenges/:type/:userId', challengesList);
 app.get('/challenges/:challengeId/:userId', challenge);
 app.get('/profile/:userId', profile);
@@ -29,8 +31,9 @@ app.get('/leaderboard/:userId', leaderboard);
 app.get('/match/:userId', match);
 
 // Listen for server connection
-app.listen(3001, () => {
-  console.log('Server running on port 3001')
+const port = 3001;
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`)
 });
 
 module.exports = app;
