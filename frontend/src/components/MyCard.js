@@ -1,9 +1,7 @@
 import {
   Card,
-  CardHeader,
   CardBody,
   CardFooter,
-  theme,
   Image,
   Stack,
   Heading,

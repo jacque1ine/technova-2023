@@ -1,15 +1,8 @@
 import {
-    ChakraProvider,
     Box,
-    Text,
-    Link,
-    VStack,
-    Code,
-    Grid,
-    theme,
     Flex,
-    Center,
-    Image
+    Text,
+    Center
   } from '@chakra-ui/react';
   import { Divider } from '@chakra-ui/react'
 
@@ -19,6 +12,7 @@ const ViewChallenges = (props) => {
     return (
         <Center>
             <Flex flexDirection='column'>
+                <Challenge />
                 <Text py={5} fontSize='23px' fontWeight='bold'>{props.category}</Text>
             </Flex>
         </Center>

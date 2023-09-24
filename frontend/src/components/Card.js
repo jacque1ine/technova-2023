@@ -1,13 +1,5 @@
-import { Card, CardHeader, CardBody, CardFooter } from '@chakra-ui/react';
+import { Card, CardBody, CardFooter } from '@chakra-ui/react';
 import {
-  ChakraProvider,
-  Box,
-  Text,
-  Link,
-  VStack,
-  Code,
-  Grid,
-  theme,
   Image,
   Stack,
   Heading,

@@ -1,7 +1,6 @@
 import React from 'react';
 import { ChakraProvider } from '@chakra-ui/react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { extendTheme } from '@chakra-ui/react';
 import CreateProfile from './components/CreateProfile';
 import MatchedSection from './components/MatchedSection';
 import ViewChallenge from './components/ViewChallenge';
@@ -26,9 +25,3 @@ function App() {
 }
 
 export default App;
-
-const theme = extendTheme({
-  fonts: {
-    heading: `'Inter', sans-serif`,
-  },
-});
