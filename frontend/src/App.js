@@ -1,20 +1,16 @@
 import React from 'react';
-import { ChakraProvider, Box, Text, Link, VStack, Code, Grid, extendTheme } from '@chakra-ui/react';
-import { ColorModeSwitcher } from './ColorModeSwitcher';
-import { Logo } from './Logo';
-import { Button, ButtonGroup } from '@chakra-ui/react';
-import MyCard from './components/MyCard';
-//import CreateProfile from './components/CreateProfile';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { extendTheme } from '@chakra-ui/react';
 
-import '@fontsource/inter/700.css'
-//import ViewChallenges from './components/ViewChallenges';
+import '@fontsource/inter/700.css';
 
 function App() {
   return (
-    <ChakraProvider theme={theme}>
-      <Box textAlign="center" fontSize="xl">
-      </Box>
-    </ChakraProvider>
+    <BrowserRouter>
+      <Routes>
+        <Route path="" element={null} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
@@ -24,6 +20,4 @@ const theme = extendTheme({
   fonts: {
     heading: `'Inter', sans-serif`,
   },
-})
-
-
+});
