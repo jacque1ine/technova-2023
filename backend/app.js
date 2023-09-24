@@ -2,10 +2,12 @@ var express = require('express');
 var cors = require('cors');
 require('dotenv').config();
 
-// Import routes
+// Import action route logic
 const createProfile = require('./routes/actions/createProfile');
 const createChallenge = require('./routes/actions/createChallenge');
+const joinChallenge = require('./routes/actions/joinChallenge');
 
+// Import page route logic
 const home = require('./routes/pages/home');
 const challengesList = require('./routes/pages/challengeList');
 const challenge = require('./routes/pages/challenge');
@@ -19,11 +21,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 
-// Use routes
+// Action routes
 app.post('/create-profile/:userId', createProfile);
 app.post('/create-challenge/:userId', createChallenge);
+app.put('/join-challenge/:challengeId/:userId', joinChallenge);
 
-// app.get('/:userId', home);
+// Page routes
+app.get('/:userId', home);
 app.get('/challenges/:type/:userId', challengesList);
 app.get('/challenges/:challengeId/:userId', challenge);
 app.get('/profile/:userId', profile);

@@ -3,6 +3,7 @@ const { challengesCol } = require('../../db');
 
 const createChallenge = async(req, res, next) => {
   const userId = req.params.userId;
+  
   const dbResponse = await challengesCol.insertOne({
     'type': req.body.type,
     'featured': req.body.featured,
