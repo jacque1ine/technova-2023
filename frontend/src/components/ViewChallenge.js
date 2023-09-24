@@ -54,7 +54,7 @@ const ViewChallenge = (props) => {
                     <div>
                         <Button mr={2}>Leave</Button>
                         <Button ml={2}>Submit</Button>
-                    </div>
+                    </div> 
                     :
                     <div><Button>Join</Button></div>
                 }
