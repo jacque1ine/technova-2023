@@ -3,7 +3,7 @@ import { ReactRouterLink } from 'react-router-dom';
 import ChakraLink from '@chakra-ui/react';
 
 const Tester = () => {
-  return <div>Tester</div>;
+  return <div>HEEEELOOOOO</div>;
 };
 
 export default Tester;
