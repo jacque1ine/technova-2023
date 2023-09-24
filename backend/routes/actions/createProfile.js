@@ -3,6 +3,7 @@ const { usersCol } = require('../../db');
 
 const createProfile = async(req, res, next) => {
   const userId = req.params.userId;
+  
   await usersCol.updateOne(
     {'_id': new ObjectId(userId)},
     {
