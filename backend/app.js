@@ -8,6 +8,7 @@ const createProfile = require('./routes/createProfile');
 const home = require('./routes/pages/home');
 const challengesList = require('./routes/pages/challengeList');
 const challenge = require('./routes/pages/challenge');
+const profile = require('./routes/pages/profile');
 
 // Configure Express
 var app = express();
@@ -21,6 +22,7 @@ app.post('/create-profile/:userId', createProfile);
 app.get('/:userId', home);
 app.get('/challenges/:type/:userId', challengesList);
 app.get('/challenges/:challengeId/:userId', challenge);
+app.get('/profile/:userId', profile);
 
 // Listen for server connection
 app.listen(3001, () => {

@@ -1,10 +1,9 @@
-const { ObjectId } = require('mongodb');
-const { usersCol } = require('../../db');
 const getChallenges = require('../../utils/getChallenges');
+const getUser = require('../../utils/getUser');
 
 const home = async(req, res, next) => {
   const userId = req.params.userId;
-  const user = await usersCol.findOne({'_id': new ObjectId(userId)});
+  const user = await getUser(userId);
 
   const featuredChallenge = await getChallenges('featured', userId);
   const myChallenges = await getChallenges('my-challenges', userId);
