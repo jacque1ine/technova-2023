@@ -6,6 +6,7 @@ require('dotenv').config();
 const createProfile = require('./routes/actions/createProfile');
 const createChallenge = require('./routes/actions/createChallenge');
 const joinChallenge = require('./routes/actions/joinChallenge');
+const leaveChallenge = require('./routes/actions/leaveChallenge');
 
 // Import page route logic
 const home = require('./routes/pages/home');
@@ -25,6 +26,7 @@ app.use(cors());
 app.post('/create-profile/:userId', createProfile);
 app.post('/create-challenge/:userId', createChallenge);
 app.put('/join-challenge/:challengeId/:userId', joinChallenge);
+app.put('/leave-challenge/:challengeId/:userId', leaveChallenge);
 
 // Page routes
 app.get('/:userId', home);
