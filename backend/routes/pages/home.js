@@ -1,6 +1,6 @@
 const { ObjectId } = require('mongodb');
-const { usersCol } = require('../db');
-const getChallenges = require('../utils/getChallenges');
+const { usersCol } = require('../../db');
+const getChallenges = require('../../utils/getChallenges');
 
 const home = async(req, res, next) => {
   const userId = req.params.userId;

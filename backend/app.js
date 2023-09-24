@@ -5,8 +5,9 @@ require('dotenv').config();
 // Import routes
 const createProfile = require('./routes/createProfile');
 
-const home = require('./routes/home');
-const challengesList = require('./routes/challengeList');
+const home = require('./routes/pages/home');
+const challengesList = require('./routes/pages/challengeList');
+const challenge = require('./routes/pages/challenge');
 
 // Configure Express
 var app = express();
@@ -19,6 +20,7 @@ app.post('/create-profile/:userId', createProfile);
 
 app.get('/:userId', home);
 app.get('/challenges/:type/:userId', challengesList);
+app.get('/challenges/:challengeId/:userId', challenge);
 
 // Listen for server connection
 app.listen(3001, () => {
